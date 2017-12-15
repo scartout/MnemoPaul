@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %> 
+<%@ page import="java.util.Calendar" %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Choose the review</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" rel="stylesheet">
+  </head>
+ 
+  <body>
+  
+  <jsp:include page="fragment/navbar.jspf" />
+  
+  <br>
+  <h1 class="centered">Choose deck:</h1>
+  <br><br>
+  
+  <div class="form-group">
+  	<label class="col-xs-4 control-label"></label>
+  	<div class="col-xs-4 selectContainer">
+  		<form action="review">
+  		<select class="form-control" name="deck">
+  			<option value="null"><c:out value="" /></option>
+  			<c:if test="${not empty requestScope.decks}">
+        	<c:forEach var="deck2" items="${requestScope.decks}" varStatus="stat">
+        		<option value="${deck2.deck}"><c:out value="${deck2.deck}" /></option>
+        	</c:forEach>
+        	</c:if>
+  		</select>
+  		<br>
+  		<div class="centered">
+  		<input class="btn btn-success" type="submit" value="Start review!">
+  		</div>
+  		</form>
+  	</div>
+  </div>
+
+  
+  <jsp:include page="fragment/footer.jspf" />
+     
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="resources/js/bootstrap.js"></script>
+  </body>
+</html>

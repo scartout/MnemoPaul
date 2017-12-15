@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Context>
+<Context>
+    <Resource
+        name="jdbc/mnemopaul"
+        auth="Container"
+        type="javax.sql.DataSource"
+        initialSize="10"
+        maxTotal="100"
+        maxIdle="30"
+        maxWaitMillis="10000"
+        username="root"
+        password="admin"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/mnemopaul" />
+ 
+    <Realm
+        className="org.apache.catalina.realm.DataSourceRealm"
+        dataSourceName="jdbc/mnemopaul"
+        userTable="user"
+        userNameCol="username"
+        userCredCol="password"
+        userRoleTable="user"
+        roleNameCol="role"
+        localDataSource="true"
+        digest="MD5" >
+		<CredentialHandler
+		className="org.apache.catalina.realm.MessageDigestCredentialHandler"
+		algorithm="md5"/>
+	</Realm>
+</Context>
