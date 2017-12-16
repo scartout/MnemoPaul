@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Choose the review</title>
+    <title>Choose the repeat</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -27,7 +27,7 @@
   <div class="form-group">
   	<label class="col-xs-4 control-label"></label>
   	<div class="col-xs-4 selectContainer">
-  		<form action="review">
+  		<form action="repeat">
   		<select class="form-control" name="deck">
   			<option value="null"><c:out value="" /></option>
   			<c:if test="${not empty requestScope.decks}">
@@ -38,7 +38,7 @@
   		</select>
   		<br>
   		<div class="centered">
-  		<input class="btn btn-success" type="submit" value="Start review!">
+  		<input class="btn btn-success" type="submit" value="Start repeat!">
   		</div>
   		</form>
   	</div>

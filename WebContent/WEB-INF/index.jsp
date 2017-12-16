@@ -26,7 +26,7 @@
 			<a href="${pageContext.request.contextPath}/login" class="button scrolly"><span class="glyphicon glyphicon-log-in"></span> Sign in or register</a>
 			<a href="${pageContext.request.contextPath}/new" class="button scrolly"><span class="glyphicon glyphicon-plus"></span> Add new card</a>
 			<a href="${pageContext.request.contextPath}/wordlist" class="button scrolly"><span class="glyphicon glyphicon-scissors"></span> Edit existing card</a>
-			<a href="${pageContext.request.contextPath}/reviewchoise" class="button scrolly"><span class="glyphicon glyphicon-list"></span> Start review</a>
+			<a href="${pageContext.request.contextPath}/repeatchoise" class="button scrolly"><span class="glyphicon glyphicon-list"></span> Start repeat</a>
 		</footer>
 	</section>
 

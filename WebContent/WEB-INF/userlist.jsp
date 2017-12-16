@@ -17,7 +17,7 @@
   </head>
  
   <body>
-  
+
   	<jsp:include page="fragment/navbar.jspf" />
     
     <c:if test="${not empty requestScope.users}">
@@ -46,6 +46,10 @@
 				<td><form action="deleteuser" method="post">
 				<input type="hidden" name="user_id" value="${user.user_id}">
 	        	<input class="btn btn-danger" type="submit" value="Delete"></form></td></c:if>
+	        <c:if test="${user.role != 'user'}">
+	        	<td></td>
+	        	<td></td>
+	        </c:if>	
 	      </tr>
 	      </c:forEach>
 	    </tbody>

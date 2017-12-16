@@ -10,7 +10,7 @@
       <url-pattern>/edit</url-pattern>
       <url-pattern>/new</url-pattern>
       <url-pattern>/login</url-pattern>
-      <url-pattern>/review</url-pattern>
+      <url-pattern>/repeat</url-pattern>
       <url-pattern>/reviewchoise</url-pattern>
       <url-pattern>/wordlist</url-pattern> 
       <url-pattern>/delete</url-pattern>

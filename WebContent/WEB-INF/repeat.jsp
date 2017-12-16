@@ -77,13 +77,11 @@
 				    	class="btn btn-warning" type="button">4 days</a>
 	    				<c:if test="${word.date != null}">
 	    					<a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button10days%>"
-					    	class="btn btn-success" type="button">10 days</a>
-		    				<c:if test="${(word.date < dateValue)}">	
-						    	<a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button20days%>"
-						    	class="btn btn-info" type="button">20 days</a>
-						    	<a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button30days%>"
-					    		class="btn btn-primary" type="button">30 days</a>
-				    		</c:if> 
+					    	class="btn btn-success" type="button">10 days</a>	
+						    <a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button20days%>"
+						    class="btn btn-info" type="button">20 days</a>
+						    <a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button30days%>"
+					    	class="btn btn-primary" type="button">30 days</a>
 				    	</c:if>
 		    		</div>
     			</div>

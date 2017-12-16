@@ -13,8 +13,8 @@ import pl.scartout.mnemopaul.model.User;
 import pl.scartout.mnemopaul.model.Word;
 import pl.scartout.mnemopaul.service.WordService;
  
-@WebServlet("/reviewchoise")
-public class ReviewChoiseController extends HttpServlet {
+@WebServlet("/repeatchoise")
+public class RepeatChoiseController extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
     @Override
@@ -25,7 +25,7 @@ public class ReviewChoiseController extends HttpServlet {
         request.setAttribute("user", user_id);
         saveDecksInRequest(request, user_id);
 
-        request.getRequestDispatcher("WEB-INF/reviewchoise.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/repeatchoise.jsp").forward(request, response);
     }
     
     private void saveDecksInRequest(HttpServletRequest request, long user_id) {

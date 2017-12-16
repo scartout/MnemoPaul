@@ -1,6 +1,6 @@
 package pl.scartout.mnemopaul.service;
- 
-import java.sql.Timestamp;
+
+import java.util.Date;
 import java.util.List;
 
 import pl.scartout.mnemopaul.dao.DAOFactory;
@@ -10,14 +10,14 @@ import pl.scartout.mnemopaul.model.User;
  
 public class WordService {
     
-	public void addWord(String card_pl, String card_en, String deck, String tag, Timestamp date, User user) {
+	public void addWord(String card_pl, String card_en, String deck, String tag, Date date, User user) {
         Word word = createWordObject(card_pl, card_en, deck, tag, date, user);
         DAOFactory factory = DAOFactory.getDAOFactory();
         WordDAO wordDao = factory.getWordDAO();
         wordDao.create(word);
     }
      
-    private Word createWordObject(String card_pl, String card_en, String deck, String tag, Timestamp date, User user) {
+    public Word createWordObject(String card_pl, String card_en, String deck, String tag, Date date, User user) {
         Word word = new Word();
         word.setCard_pl(card_pl);
         word.setCard_en(card_en);

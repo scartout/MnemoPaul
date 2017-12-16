@@ -17,6 +17,7 @@
  <jsp:include page="fragment/navbar.jspf"/>
  
   <body>
+  
   	<br></br>
     <div class="container">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
