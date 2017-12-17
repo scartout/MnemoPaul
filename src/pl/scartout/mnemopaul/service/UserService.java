@@ -12,7 +12,7 @@ import pl.scartout.mnemopaul.dao.UserDAO;
 import pl.scartout.mnemopaul.model.User;
 
 public class UserService {
-    
+   
     private String encryptPassword(String password) {
         MessageDigest digest = null;
         try {
@@ -23,8 +23,8 @@ public class UserService {
         digest.update(password.getBytes());
         String md5Password = new BigInteger(1, digest.digest()).toString(16);
         return md5Password;
-    }	
-	
+    }
+
 	public void addUser(String username, String password, String email) {
     	try {
     	User user = new User();

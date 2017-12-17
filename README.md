@@ -41,7 +41,7 @@ Planned changes in the future:
 - Implementation of review settings - parameter 'max decks per day' will be added;
 - New account user confirmation - user will activate their account after register by click the link in their e-mail from MnemoPaul service;
 - Launching MnemoPaul on remote server - initially application will be tested by my friends;
-- Implementation of SHA passwords security.
+- Implementation of SHA-256 passwords security.
 
 
 About tests:

@@ -4,9 +4,9 @@ import java.io.Serializable;
  
 public interface GenericDAO <T, PK extends Serializable> {
 
-    T create(T newObject);
-    T read(PK primaryKey);
-    boolean update(T updateObject);
-    boolean delete(PK key);
+    T create(T object);
+    T read(PK id);
+    boolean update(T object);
+    boolean delete(PK id);
     
 }
