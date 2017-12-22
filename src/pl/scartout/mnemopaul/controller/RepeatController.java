@@ -16,18 +16,28 @@ import pl.scartout.mnemopaul.service.WordService;
 @WebServlet("/repeat")
 public class RepeatController extends HttpServlet {
     private static final long serialVersionUID = 1L;
- 
+    
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
+        doPost(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	User loggedUser = (User) request.getSession().getAttribute("user");
         long user_id  = loggedUser.getUser_id();
         request.setAttribute("user", user_id);
-        String deck = request.getParameter("deck");
+        String deck;
+        if (request.getParameter("deck") == null) deck = (String) request.getSession().getAttribute("deck");
+        else deck = request.getParameter("deck");
         if (deck.equals("null")) saveWordsInRequest(request, user_id);
         else saveWordsInRequest(request, user_id, deck);
+        request.getSession(true).setAttribute("deck", deck);
         request.getRequestDispatcher("WEB-INF/repeat.jsp").forward(request, response);
     }
+    
     
     private void saveWordsInRequest(HttpServletRequest request, long user_id) {
     	WordService wordService = new WordService();

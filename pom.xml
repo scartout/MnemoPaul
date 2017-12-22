@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>pl.scartout</groupId>
   <artifactId>MnemoPaul</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <packaging>war</packaging>
   
   <properties>
@@ -205,4 +205,5 @@
       </plugin>
     </plugins>
   </build>
+  <name>MnemoPaul</name>
 </project>

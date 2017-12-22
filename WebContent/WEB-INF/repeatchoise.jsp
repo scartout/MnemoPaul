@@ -20,6 +20,8 @@
   
   <jsp:include page="fragment/navbar.jspf" />
   
+  <c:if test="${not empty requestScope.decks}">
+  
   <br>
   <h1 class="centered">Choose deck:</h1>
   <br><br>
@@ -27,7 +29,7 @@
   <div class="form-group">
   	<label class="col-xs-4 control-label"></label>
   	<div class="col-xs-4 selectContainer">
-  		<form action="repeat">
+  		<form action="repeat" method="post">
   		<select class="form-control" name="deck">
   			<option value="null"><c:out value="" /></option>
   			<c:if test="${not empty requestScope.decks}">
@@ -43,6 +45,12 @@
   		</form>
   	</div>
   </div>
+  </c:if>
+  <c:if test="${empty requestScope.decks}">
+  		<br><br><br>
+    	<h1 class="centered">You don't have any flashcards</h1>
+    	<h1 class="centered"> <a href="${pageContext.request.contextPath}/new">Add it now</a></h1>
+  </c:if>
 
   
   <jsp:include page="fragment/footer.jspf" />

@@ -49,11 +49,8 @@
 	cal.add(Calendar.DAY_OF_YEAR, 30);
 	Date now30days = cal.getTime();
 	String button30days=sdf.format(now30days);
-	%> 
+	%>
 	
-	<jsp:useBean id="dateValue" class="java.util.Date" />
-	<jsp:setProperty name="dateValue" property="time" value="${h.time}" />
-    
     <br><br><br>
     <c:if test="${not empty requestScope.words}">
         <c:forEach var="word" items="${requestScope.words}" varStatus="stat">
@@ -67,22 +64,42 @@
                  <div id="spoiler" style="display:none"> 
     				<h1 class="centered"><c:out value="${word.card_en}" /></h1>
     				<div class="centered">
+    				<table>
     					<c:if test="${word.date == null}">
-    						<a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=buttonnull%>"
-				    		class="btn btn-default" type="button">Again</a>
-    					</c:if> 
-    					<a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button0days%>"
-				    	class="btn btn-danger" type="button">Today</a>
-				    	<a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button4days%>"
-				    	class="btn btn-warning" type="button">4 days</a>
-	    				<c:if test="${word.date != null}">
-	    					<a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button10days%>"
-					    	class="btn btn-success" type="button">10 days</a>	
-						    <a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button20days%>"
-						    class="btn btn-info" type="button">20 days</a>
-						    <a href="${pageContext.request.contextPath}/date?word_id=${word.word_id}&date=<%=button30days%>"
-					    	class="btn btn-primary" type="button">30 days</a>
+    					<form action="date" method="post">
+    						<input type="hidden" name="word_id" value="${word.word_id}">
+    						<input type="hidden" name="date" value=<%=buttonnull%>>
+				    		<input class="btn btn-default" type="submit" value="Again">
+				    	</form>
+    					</c:if>
+    					<form action="date" method="post">
+    						<input type="hidden" name="word_id" value="${word.word_id}">
+    						<input type="hidden" name="date" value=<%=button0days%>>
+				    		<input class="btn btn-danger" type="submit" value="Today">
+				    	</form>
+    					<form action="date" method="post">
+    						<input type="hidden" name="word_id" value="${word.word_id}">
+    						<input type="hidden" name="date" value=<%=button4days%>>
+				    		<input class="btn btn-warning" type="submit" value="4 days">
+				    	</form>
+	    				<c:if test="${word.date != null && word.date >= now}">
+	    				<form action="date" method="post">
+    						<input type="hidden" name="word_id" value="${word.word_id}">
+    						<input type="hidden" name="date" value=<%=button10days%>>
+				    		<input class="btn btn-success" type="submit" value="10 days">
+				    	</form> 	
+						<form action="date" method="post">
+    						<input type="hidden" name="word_id" value="${word.word_id}">
+    						<input type="hidden" name="date" value=<%=button20days%>>
+				    		<input class="btn btn-info" type="submit" value="20 days">
+				    	</form> 
+						<form action="date" method="post">
+    						<input type="hidden" name="word_id" value="${word.word_id}">
+    						<input type="hidden" name="date" value=<%=button30days%>>
+				    		<input class="btn btn-primary" type="submit" value="30 days">
+				    	</form>
 				    	</c:if>
+				    </table>		
 		    		</div>
     			</div>
     			<div class="centered">

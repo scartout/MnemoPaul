@@ -15,13 +15,12 @@ import pl.scartout.mnemopaul.model.Word;
 import pl.scartout.mnemopaul.service.WordService;
  
 @WebServlet("/date")
-public class DateController extends HttpServlet {
+public class WordDateController extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    @Override 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String referer = request.getHeader("Referer");
     	
     	long word_id = Long.parseLong(request.getParameter("word_id"));
     	DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -32,7 +31,7 @@ public class DateController extends HttpServlet {
 			
 		}
         updateWord(word_id, date);
-        response.sendRedirect(referer);
+        response.sendRedirect(request.getContextPath() + "/repeat");
     }
     
     private void updateWord(long word_id, Date date) {

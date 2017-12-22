@@ -12,7 +12,7 @@ import pl.scartout.mnemopaul.model.Word;
 import pl.scartout.mnemopaul.service.WordService;
  
 @WebServlet("/edit")
-public class EditWordController extends HttpServlet {
+public class WordEditController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     @Override

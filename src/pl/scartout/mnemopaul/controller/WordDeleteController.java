@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import pl.scartout.mnemopaul.service.WordService;
  
 @WebServlet("/delete")
-public class DeleteWordController extends HttpServlet {
+public class WordDeleteController extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
     @Override

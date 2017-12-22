@@ -11,7 +11,7 @@
       <url-pattern>/new</url-pattern>
       <url-pattern>/login</url-pattern>
       <url-pattern>/repeat</url-pattern>
-      <url-pattern>/reviewchoise</url-pattern>
+      <url-pattern>/repeatchoise</url-pattern>
       <url-pattern>/wordlist</url-pattern> 
       <url-pattern>/delete</url-pattern>
       <url-pattern>/update</url-pattern>

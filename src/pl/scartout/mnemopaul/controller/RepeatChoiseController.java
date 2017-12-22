@@ -24,7 +24,6 @@ public class RepeatChoiseController extends HttpServlet {
         long user_id  = loggedUser.getUser_id();
         request.setAttribute("user", user_id);
         saveDecksInRequest(request, user_id);
-
         request.getRequestDispatcher("WEB-INF/repeatchoise.jsp").forward(request, response);
     }
     

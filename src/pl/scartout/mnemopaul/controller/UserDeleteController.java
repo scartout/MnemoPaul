@@ -8,11 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import pl.scartout.mnemopaul.model.User;
 import pl.scartout.mnemopaul.service.UserService;
  
-@WebServlet("/updateuser")
-public class UpdateUserController extends HttpServlet {
+@WebServlet("/deleteuser")
+public class UserDeleteController extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
     @Override
@@ -20,15 +19,8 @@ public class UpdateUserController extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         long user_id = Long.valueOf(request.getParameter("user_id"));
-        updateUser(user_id);
-        response.sendRedirect(request.getContextPath() + "/edituserlist");
-    }
-
-    private void updateUser(long user_id) {
-        UserService userService = new UserService();
-        User user = userService.getUserById(user_id);
-        user.setRole("admin");
-        userService.updateUser(user);
+        UserService.deleteUser(user_id);
+        response.sendRedirect(request.getContextPath() + "/userlist");
     }
 
 }
