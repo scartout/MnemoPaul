@@ -52,7 +52,8 @@
 	%>
 	
     <br><br><br>
-    <c:if test="${not empty requestScope.words}">
+    <c:choose>
+    <c:when test="${not empty requestScope.words}">
         <c:forEach var="word" items="${requestScope.words}" varStatus="stat">
         	<c:if test="${stat.first}">
             <div class="container">
@@ -114,11 +115,12 @@
             </div>
     	</c:if>
         </c:forEach>
-    </c:if>
-    <c:if test="${empty requestScope.words}">
+    </c:when>
+    <c:when test="${empty requestScope.words}">
     	<h1 class="centered">You don't have any flashcards</h1>
     	<h1 class="centered"> <a href="${pageContext.request.contextPath}/new">Add it now</a></h1>
-    </c:if>
+    </c:when>
+    </c:choose>
      
 	<jsp:include page="fragment/footer.jspf" />
      

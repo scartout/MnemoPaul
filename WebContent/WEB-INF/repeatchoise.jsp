@@ -20,7 +20,8 @@
   
   <jsp:include page="fragment/navbar.jspf" />
   
-  <c:if test="${not empty requestScope.decks}">
+  <c:choose>
+  <c:when test="${not empty requestScope.decks}">
   
   <br>
   <h1 class="centered">Choose deck:</h1>
@@ -45,12 +46,13 @@
   		</form>
   	</div>
   </div>
-  </c:if>
-  <c:if test="${empty requestScope.decks}">
+  </c:when>
+  <c:when test="${empty requestScope.decks}">
   		<br><br><br>
     	<h1 class="centered">You don't have any flashcards</h1>
     	<h1 class="centered"> <a href="${pageContext.request.contextPath}/new">Add it now</a></h1>
-  </c:if>
+  </c:when>
+  </c:choose>
 
   
   <jsp:include page="fragment/footer.jspf" />
