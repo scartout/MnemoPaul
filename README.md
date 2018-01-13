@@ -1,6 +1,6 @@
 # MnemoPaul - developed by Pawel Dudek
 © 2017
-Version 1.x.x
+Version 1.0.5
 
 
 ## How to use:
@@ -20,6 +20,7 @@ Portals like Quizlet offer flashcards repeats focus on all words repeats. Deskto
 ## Technologies used:
 
 - Java EE
+- Spring
 - Tomcat
 - Bootstrap
 - HTML
