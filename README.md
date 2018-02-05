@@ -1,6 +1,6 @@
 # MnemoPaul - developed by Pawel Dudek
 © 2017
-Version 1.0.5
+Version 1.0.6
 
 
 ## How to use:
@@ -30,8 +30,9 @@ Portals like Quizlet offer flashcards repeats focus on all words repeats. Deskto
 - JDBC
 - Maven
 - Hibernate
-- JUnit
 - MD5
+- JUnit
+- EqualsVerifier
 
 
 # Planned changes in the future:
@@ -42,8 +43,3 @@ Portals like Quizlet offer flashcards repeats focus on all words repeats. Deskto
 - Account user confirmation - user will activate their account after register by click the link in their e-mail from MnemoPaul service;
 - Launching MnemoPaul on remote server - initially application will be tested by my friends;
 - Replacing MD5 by SHA-256.
-
-
-# About tests:
-
-The tests have been implemented as showcase. In this application black-box tests playing a bigger role.

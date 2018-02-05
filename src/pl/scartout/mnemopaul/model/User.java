@@ -1,12 +1,14 @@
 package pl.scartout.mnemopaul.model;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Email;
+import org.hibernate.annotations.Immutable;
 
-public class User {
+@Immutable
+final public class User {
 
 	@NotNull
 	@Min(1)

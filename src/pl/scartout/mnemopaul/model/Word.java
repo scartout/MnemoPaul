@@ -5,9 +5,12 @@ import java.util.Date;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Immutable;
+
 import pl.scartout.mnemopaul.model.User;
 
-public class Word {
+@Immutable
+final public class Word {
 
 	@NotNull
 	private long word_id;
