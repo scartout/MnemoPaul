@@ -18,7 +18,7 @@ public class WordDeleteController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        long word_id = Long.valueOf(request.getParameter("word_id"));
+        long word_id = Long.parseLong(request.getParameter("word_id"));
         WordService.deleteWord(word_id);
         response.sendRedirect(request.getContextPath() + "/wordlist");
     }

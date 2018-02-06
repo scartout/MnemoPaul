@@ -2,7 +2,9 @@ package pl.scartout.mnemopaul.util;
  
 import java.sql.Connection;
 import java.sql.SQLException;
- 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -25,7 +27,8 @@ public class ConnectionProvider {
                 DataSource ds = (DataSource) envContext.lookup("jdbc/mnemopaul");
                 dataSource = ds;
             } catch (NamingException e) {
-                e.printStackTrace();
+            	Logger LOGGER = Logger.getAnonymousLogger();
+    			LOGGER.log( Level.SEVERE, e.toString(), e );
             }
         }
          

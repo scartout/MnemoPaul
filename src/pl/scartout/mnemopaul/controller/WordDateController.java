@@ -5,6 +5,9 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +31,8 @@ public class WordDateController extends HttpServlet {
 		try {
 			date = df.parse(request.getParameter("date"));
 		} catch (ParseException e) {
-			
+			Logger LOGGER = Logger.getAnonymousLogger();
+			LOGGER.log( Level.SEVERE, e.toString(), e );
 		}
         updateWord(word_id, date);
         response.sendRedirect(request.getContextPath() + "/repeat");

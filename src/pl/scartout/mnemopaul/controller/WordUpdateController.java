@@ -19,7 +19,7 @@ public class WordUpdateController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        long word_id = Long.valueOf(request.getParameter("word_id"));
+        long word_id = Long.parseLong(request.getParameter("word_id"));
         String card_pl = request.getParameter("InputWord_pl");
         String card_en = request.getParameter("InputWord_en");
         String deck = request.getParameter("InputDeck");

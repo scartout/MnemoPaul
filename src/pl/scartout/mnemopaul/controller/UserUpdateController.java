@@ -19,9 +19,9 @@ public class UserUpdateController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        long user_id = Long.valueOf(request.getParameter("user_id"));
+        long user_id = Long.parseLong(request.getParameter("user_id"));
         updateUser(user_id);
-        response.sendRedirect(request.getContextPath() + "/edituserlist");
+        response.sendRedirect(request.getContextPath() + "/userlist");
     }
 
     private void updateUser(long user_id) {

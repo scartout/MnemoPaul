@@ -1,6 +1,6 @@
 # MnemoPaul - developed by Pawel Dudek
 © 2017
-Version 1.0.6
+Version 1.0.7
 
 
 ## How to use:

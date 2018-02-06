@@ -1,5 +1,8 @@
 package pl.scartout.mnemopaul.dao;
  
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import pl.scartout.mnemosyne.exception.NoSuchDbTypeException;
 
 public abstract class DAOFactory {
@@ -15,7 +18,8 @@ public abstract class DAOFactory {
     	try {
     		factory = getDAOFactory(MYSQL_DAO_FACTORY);
     	}catch (NoSuchDbTypeException e) {
-    		e.printStackTrace();
+    		Logger LOGGER = Logger.getAnonymousLogger();
+			LOGGER.log( Level.SEVERE, e.toString(), e );
     	}
     	return factory;
     }

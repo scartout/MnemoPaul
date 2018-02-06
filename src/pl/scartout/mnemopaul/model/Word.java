@@ -1,5 +1,6 @@
 package pl.scartout.mnemopaul.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.validation.constraints.NotNull;
@@ -10,8 +11,10 @@ import org.hibernate.annotations.Immutable;
 import pl.scartout.mnemopaul.model.User;
 
 @Immutable
-final public class Word {
+public final class Word implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	@NotNull
 	private long word_id;
 	@Size(min=0, max=200)

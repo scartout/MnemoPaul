@@ -4,6 +4,8 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.dao.DuplicateKeyException;
 
@@ -18,7 +20,8 @@ public class UserService {
         try {
             digest = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        	Logger LOGGER = Logger.getAnonymousLogger();
+			LOGGER.log( Level.SEVERE, e.toString(), e );
         }
         digest.update(password.getBytes());
         String md5Password = new BigInteger(1, digest.digest()).toString(16);

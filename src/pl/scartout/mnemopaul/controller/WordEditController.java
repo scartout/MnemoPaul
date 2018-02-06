@@ -19,7 +19,7 @@ public class WordEditController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        long word_id = Long.valueOf(request.getParameter("word_id"));
+        long word_id = Long.parseLong(request.getParameter("word_id"));
         saveWordInRequest(request, word_id);
         request.getRequestDispatcher("WEB-INF/edit.jsp").forward(request, response);
     }

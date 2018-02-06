@@ -1,5 +1,7 @@
 package pl.scartout.mnemopaul.model;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -8,8 +10,10 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.Immutable;
 
 @Immutable
-final public class User {
+public final class User implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	@NotNull
 	@Min(1)
 	private long user_id;
