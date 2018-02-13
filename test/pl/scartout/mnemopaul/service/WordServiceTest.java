@@ -1,4 +1,4 @@
-package pl.scartout.test;
+package pl.scartout.mnemopaul.service;
 
 import java.util.Date;
 

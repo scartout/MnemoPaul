@@ -29,6 +29,14 @@ public class WordDAOImpl implements WordDAO {
 	        "SELECT word_id, card_en, card_pl, deck, tag, date, user.user_id "
 	        + "FROM word LEFT JOIN user ON word.user_id=user.user_id "
 	        + "WHERE user.user_id = :userId AND (date<Now() OR date IS NULL) ORDER BY date, word_id ASC LIMIT 1;";
+	private static final String READ_ALL_WORDS_TO_IMPORT = 
+	        "SELECT word_id, card_en, card_pl, deck, tag, date, user.user_id "
+	        + "FROM word LEFT JOIN user ON word.user_id=user.user_id "
+	        + "WHERE user.user_id = :userId ORDER BY word_id;";
+	private static final String READ_ALL_WORDS_TO_IMPORT_BY_DECK = 
+	        "SELECT word_id, card_en, card_pl, deck, tag, date, user.user_id "
+	        + "FROM word LEFT JOIN user ON word.user_id=user.user_id "
+	        + "WHERE user.user_id = :userId AND deck=:deck ORDER BY word_id;";
 	private static final String READ_ALL_WORDS_BY_ID = 
 	        "SELECT word_id, card_en, card_pl, deck, tag, date, user.user_id "
 			+ "FROM word LEFT JOIN user ON word.user_id=user.user_id WHERE user.user_id = :userId ORDER BY word_id;";
@@ -106,6 +114,20 @@ public class WordDAOImpl implements WordDAO {
     public List<Word> getAll(long userId) {
     	SqlParameterSource paramSource = new MapSqlParameterSource("userId", userId);
     	List<Word> words = template.query(READ_FIRST_WORD, paramSource, new WordRowMapper());
+        return words;
+    }
+    
+    @Override
+    public List<Word> getExport(long userId) {
+    	SqlParameterSource paramSource = new MapSqlParameterSource("userId", userId);
+    	List<Word> words = template.query(READ_ALL_WORDS_TO_IMPORT, paramSource, new WordRowMapper());
+        return words;
+    }
+    
+    @Override
+    public List<Word> getExportByDeck(long userId, String deck) {
+    	SqlParameterSource paramSource = new MapSqlParameterSource("userId", userId).addValue("deck", deck);
+    	List<Word> words = template.query(READ_ALL_WORDS_TO_IMPORT_BY_DECK, paramSource, new WordRowMapper());
         return words;
     }
     

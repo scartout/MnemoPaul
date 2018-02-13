@@ -1,6 +1,6 @@
 # MnemoPaul - developed by Pawel Dudek
 © 2017
-Version 1.0.7
+Version 1.1.0
 
 
 ## How to use:
@@ -10,6 +10,11 @@ Version 1.0.7
 2. Run MnemoPaul on Tomcat Server (8.0.x version);
 3. Register your own user. If you need administrator rights, alter you role in MySql database;
 4. Log in.
+
+
+## Cards export:
+
+Export default folder is "D:/". You might change it in pl.scartout.mnemopaul.controller.ExportController.java class (constant EXPORT_FOLDER).
 
 
 ## Business goal:

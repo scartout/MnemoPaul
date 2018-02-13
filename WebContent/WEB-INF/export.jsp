@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Choose the repeat</title>
+    <title>Export</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -24,13 +24,13 @@
   <c:when test="${not empty requestScope.decks}">
   
   <br>
-  <h1 class="centered">Choose deck:</h1>
+  <h1 class="centered">Export deck:</h1>
   <br><br>
   
   <div class="form-group">
   	<label class="col-xs-4 control-label"></label>
   	<div class="col-xs-4 selectContainer">
-  		<form action="repeat" method="post">
+  		<form action="exporttofile" method="post">
   		<select class="form-control" name="deck">
   			<option value="null"><c:out value="" /></option>
   			<c:if test="${not empty requestScope.decks}">
@@ -41,7 +41,7 @@
   		</select>
   		<br>
   		<div class="centered">
-  		<input class="btn btn-success" type="submit" value="Start repeat!">
+  		<input class="btn btn-success" type="submit" value="Export deck to file">
   		</div>
   		</form>
   	</div>

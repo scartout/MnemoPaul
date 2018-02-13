@@ -1,4 +1,6 @@
-package pl.scartout.test;
+package pl.scartout.mnemopaul.model;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
@@ -27,6 +29,14 @@ public class UserTest {
 		user.setEmail("username@mail.com");
 		user.setRole("user");
 		User user2 = new User(user);
+	}
+	
+	@Test
+	public void verifyToString() {
+		User user = new User();
+	    user.setUser_id(9999999L);
+	    user.setUsername("username");
+	    assertThat(user.toString()).isEqualTo("User - 9999999 - username");
 	}
 	
 }

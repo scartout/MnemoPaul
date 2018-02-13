@@ -97,8 +97,7 @@ public final class Word implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Word [word_id=" + word_id + ", card_pl=" + card_pl + ", card_en=" + card_en + ", deck=" + deck
-				+ ", tag=" + tag + ", date=" + date + ", user=" + user + "]";
+		return "Word - " + word_id + " - " + card_pl;
 	}
 
 	@Override

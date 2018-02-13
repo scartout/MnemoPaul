@@ -43,6 +43,20 @@ public class WordService {
         return words;
     }
     
+    public List<Word> getAllWordExport(long user_id) {
+        DAOFactory factory = DAOFactory.getDAOFactory();
+        WordDAO wordDao = factory.getWordDAO();
+        List<Word> words = wordDao.getExport(user_id);
+		return words;
+    }
+    
+    public List<Word> getAllWordExportByDeck(long user_id, String deck) {
+        DAOFactory factory = DAOFactory.getDAOFactory();
+        WordDAO wordDao = factory.getWordDAO();
+        List<Word> words = wordDao.getExportByDeck(user_id, deck);
+        return words;
+    }
+    
     public List<Word> getAllWordOrderById(Long user_id) {
         DAOFactory factory = DAOFactory.getDAOFactory();
         WordDAO wordDao = factory.getWordDAO();

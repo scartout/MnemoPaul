@@ -13,4 +13,9 @@ public interface WordDAO extends GenericDAO<Word, Long> {
 	public List<Word> getAllByDeck(long user_id, String deck);
 
 	public List<Word> getAllDeck(long user_id);
+	
+	List<Word> getExport(long userId);
+
+	List<Word> getExportByDeck(long userId, String deck);
+
 }

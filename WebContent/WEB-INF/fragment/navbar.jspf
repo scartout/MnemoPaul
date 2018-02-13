@@ -19,6 +19,7 @@
             <li><a href="${pageContext.request.contextPath}/new">New card</a></li>
             <li><a href="${pageContext.request.contextPath}/wordlist">Edit card</a></li>
             <li><a href="${pageContext.request.contextPath}/repeatchoise">Start repeat</a></li>
+            <li><a href="${pageContext.request.contextPath}/export">Export</a></li>
             <c:choose>
                     <c:when test="${not empty sessionScope.user}">
                         <li><a href="${pageContext.request.contextPath}/logout">Log out</a></li>

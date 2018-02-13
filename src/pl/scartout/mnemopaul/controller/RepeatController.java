@@ -30,8 +30,7 @@ public class RepeatController extends HttpServlet {
         long user_id  = loggedUser.getUser_id();
         request.setAttribute("user", user_id);
         String deck;
-        if (request.getParameter("deck") == null) deck = (String) request.getSession().getAttribute("deck");
-        else deck = request.getParameter("deck");
+        deck = request.getParameter("deck");
         if (deck.equals("null")) saveWordsInRequest(request, user_id);
         else saveWordsInRequest(request, user_id, deck);
         request.getSession(true).setAttribute("deck", deck);
