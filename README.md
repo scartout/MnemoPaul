@@ -1,6 +1,6 @@
 # MnemoPaul - developed by Pawel Dudek
 © 2017
-Version 1.1.0
+Version 1.1.1
 
 
 ## How to use:
@@ -14,7 +14,7 @@ Version 1.1.0
 
 ## Cards export:
 
-Export default folder is "D:/". You might change it in pl.scartout.mnemopaul.controller.ExportController.java class (constant EXPORT_FOLDER).
+Export default folder is "C:/Users/{Current User}/Desktop". You might change it in pl.scartout.mnemopaul.controller.ExportController.java class (constant EXPORT_FOLDER).
 
 
 ## Business goal:

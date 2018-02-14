@@ -23,7 +23,7 @@ import pl.scartout.mnemopaul.service.WordService;
 public class ExportController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
-    private static final String EXPORT_FOLDER = "D:\\";
+    private static final String EXPORT_FOLDER = System.getProperty("user.home") + "/Desktop/";
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,
