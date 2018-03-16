@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import pl.scartout.mnemopaul.model.User;
 import pl.scartout.mnemopaul.model.Word;
@@ -26,14 +27,17 @@ public class RepeatController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	HttpSession httpSession = request.getSession();
     	User loggedUser = (User) request.getSession().getAttribute("user");
         long user_id  = loggedUser.getUser_id();
         request.setAttribute("user", user_id);
         String deck;
         deck = request.getParameter("deck");
+        if (deck == null) deck = (String) httpSession.getAttribute("deck");
         if (deck.equals("null")) saveWordsInRequest(request, user_id);
         else saveWordsInRequest(request, user_id, deck);
         request.getSession(true).setAttribute("deck", deck);
+        httpSession.setAttribute("deck", deck);
         request.getRequestDispatcher("WEB-INF/repeat.jsp").forward(request, response);
     }
     

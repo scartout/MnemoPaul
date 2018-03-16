@@ -13,10 +13,20 @@
     <link href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" rel="stylesheet">
 	
   </head>
- 
- <jsp:include page="fragment/navbar.jspf"/>
- 
+
   <body>
+  
+  	<jsp:include page="fragment/navbar.jspf"/>
+  
+    <style>
+  	h2{
+  		color: white;
+  		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  	}
+  	body{
+  		background-image: url("images/header2.png");
+  	}
+  	</style>
   
   	<br></br>
     <div class="container">

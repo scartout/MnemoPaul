@@ -19,6 +19,23 @@
   <body>
   
   	<jsp:include page="fragment/navbar.jspf" />
+  	
+  	<style>
+   	h2{
+  		color: white;
+  		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  	}
+  	th{
+  		color: white;
+  		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  	}
+  	td{
+  		background-color: #E8E8E8;
+  	}
+    body{
+    	background-image: url("images/header4.jpg");
+    }
+    </style> 
     
     <c:if test="${not empty requestScope.words}">
     <div class="container">

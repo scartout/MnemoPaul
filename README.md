@@ -1,6 +1,6 @@
 # MnemoPaul - developed by Pawel Dudek
 © 2017
-Version 1.1.1
+Version 1.2.0
 
 
 ## How to use:
@@ -32,6 +32,8 @@ Portals like Quizlet offer flashcards repeats focus on all words repeats. Deskto
 - CSS
 - JSTL
 - EL
+- Javascript
+- JQuery
 - JDBC
 - Maven
 - Hibernate

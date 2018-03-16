@@ -20,6 +20,16 @@
   
   <jsp:include page="fragment/navbar.jspf" />
   
+  <style>
+  h1{
+  	color: white;
+  	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  body{
+   	background-image: url("images/header4.jpg");
+  }
+  </style>  
+  
   <c:choose>
   <c:when test="${not empty requestScope.decks}">
   

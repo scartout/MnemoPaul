@@ -14,11 +14,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
  
   <body>
   
   	<jsp:include page="fragment/navbar.jspf" />
+  	
+	<style>
+	h1{
+  		color: white;
+  		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  	}
+  	h4{
+  		color: white;
+  		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  	}
+    body{
+    	background-image: url("images/header4.jpg");
+    }
+    </style> 
     
     <%
 	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -105,10 +120,8 @@
     			</div>
     			<div class="centered">
     				<br>
-    				<button class="btn btn-default" title="Unhide" type="button" onclick="if(document.getElementById('spoiler')
-        				.style.display=='none') {document.getElementById('spoiler')
-        				.style.display=''}else{document.getElementById('spoiler')
-            			.style.display='none'}">Unhide/hide</button><br>
+            		<button id="unhide-button" class="btn btn-default">Unhide</button>
+            		<br>
                 </div>
                 </div>
               </div>
@@ -121,7 +134,14 @@
     	<h1 class="centered"> <a href="${pageContext.request.contextPath}/new">Add it now</a></h1>
     </c:when>
     </c:choose>
-     
+    	
+	<script>
+	$("#unhide-button").click(function() {
+		  $("#spoiler").show();
+		  $("#unhide-button").hide();
+		});
+	</script>
+	 
 	<jsp:include page="fragment/footer.jspf" />
      
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
