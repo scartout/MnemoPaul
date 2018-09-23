@@ -1,5 +1,5 @@
 # MnemoPaul - developed by Pawel Dudek
-© 2017
+Â© 2017
 Version 1.2.0
 
 
@@ -24,29 +24,8 @@ Portals like Quizlet offer flashcards repeats focus on all words repeats. Deskto
 
 ## Technologies used:
 
-- Java EE
-- Spring
-- Tomcat
-- Bootstrap
-- HTML
-- CSS
-- JSTL
-- EL
-- Javascript
-- JQuery
-- JDBC
+- Java EE, Hibernate
+- Javascript, JQuery, HTML, CSS, Bootstrap, JSP, EL
 - Maven
-- Hibernate
-- MD5
-- JUnit
-- EqualsVerifier
-
-
-# Planned changes in the future:
-
-- Adding of Deck Sharing - other user might allow you to copy theirs cards;
-- Extension to import cards from file - it is important to add new cards from Anki, Quizlet and other applications easily and fast;
-- Implementation of review settings - parameter 'max decks per day' will be added;
-- Account user confirmation - user will activate their account after register by click the link in their e-mail from MnemoPaul service;
-- Launching MnemoPaul on remote server - initially application will be tested by my friends;
-- Replacing MD5 by SHA-256.
+- Tomcat
+- JUnit, EqualsVerifier
